@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday My Love</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Sacramento&display=swap" rel="stylesheet">
+  
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: #1a1a1a;
+      background-image: radial-gradient(#333 1px, transparent 1px);
+      background-size: 20px 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      color: #fff;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 360px;
+      padding: 20px;
+    }
+
+    .card {
+      display: none;
+      background-color: #e5e5e5;
+      color: #000;
+      border-radius: 16px;
+      padding: 25px 20px;
+      text-align: center;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+      animation: fadeIn 0.4s ease-in-out;
+    }
+
+    .card.active {
+      display: block;
+    }
+
+    .cursive-title {
+      font-family: 'Sacramento', cursive;
+      font-size: 2.2rem;
+      margin-bottom: 20px;
+    }
+
+    .envelope-icon, .icon-center {
+      font-size: 50px;
+      margin: 20px 0;
+    }
+
+    .btn {
+      background-color: #000;
+      color: #fff;
+      border: none;
+      padding: 10px 24px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-weight: 600;
+      margin-top: 15px;
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      background-color: #333;
+    }
+
+    .black-box {
+      background-color: #111;
+      color: #fff;
+      padding: 15px;
+      border-radius: 12px;
+      font-size: 0.85rem;
+      text-align: left;
+      line-height: 1.5;
+      margin: 15px 0;
+    }
+
+    .white-box {
+      background-color: #fff;
+      color: #000;
+      border: 2px solid #000;
+      padding: 15px;
+      border-radius: 12px;
+      font-size: 0.9rem;
+      margin: 15px 0;
+    }
+
+    .border-box {
+      border: 2px dashed #000;
+      padding: 15px;
+      border-radius: 12px;
+      text-align: left;
+      font-size: 0.85rem;
+      margin: 15px 0;
+    }
+
+    .border-box ul {
+      list-style-type: none;
+    }
+
+    .border-box li {
+      margin-bottom: 8px;
+    }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .menu-btn {
+      background-color: #111;
+      color: #fff;
+      border: none;
+      padding: 15px;
+      border-radius: 12px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      transition: 0.2s;
+    }
+
+    .menu-btn:hover {
+      background-color: #333;
+    }
+
+    .photo-gallery {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      margin: 15px 0;
+    }
+
+    .photo-gallery img {
+      width: 80px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 8px;
+      border: 3px solid #fff;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    .small-text {
+      font-size: 0.8rem;
+      color: #555;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      font-size: 0.9rem;
+      margin-bottom: 10px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- PAGE 1: COVER -->
+    <div id="page-cover" class="card active">
+      <h1 class="cursive-title">Happy Birthday My Love</h1>
+      <div class="envelope-icon">✉️</div>
+      <button class="btn" onclick="showPage('page-menu')">Open</button>
+    </div>
+
+    <!-- PAGE 2: MENU UTAMA -->
+    <div id="page-menu" class="card">
+      <p class="subtitle">Pilih mana dulu yang mau kamu buka:</p>
+      <div class="menu-grid">
+        <button class="menu-btn" onclick="showPage('page-wish')">🎂 Wish</button>
+        <button class="menu-btn" onclick="showPage('page-memories')">📷 Memories</button>
+        <button class="menu-btn" onclick="showPage('page-songs')">🎵 Songs</button>
+        <button class="menu-btn" onclick="showPage('page-letter')">✉️ Letter</button>
+        <button class="menu-btn" onclick="showPage('page-gift')">🎁 Gift</button>
+        <button class="menu-btn" onclick="showPage('page-reasons')">💖 Reasons</button>
+      </div>
+    </div>
+
+    <!-- PAGE 3: BIRTHDAY WISH -->
+    <div id="page-wish" class="card">
+      <h2>Birthday Wish For You</h2>
+      <div class="icon-center">🎂</div>
+      <div class="black-box">
+        <p>Happy Birthday, Sayang! ❤️<br><br>
+        Semoga di usiamu yang baru ini, kamu selalu diberikan kesehatan, kebahagiaan, dan kemudahan dalam segala hal. Terima kasih sudah menjadi bagian terindah dalam hidupku.</p>
+      </div>
+      <button class="btn" onclick="showPage('page-menu')">Back</button>
+    </div>
+
+    <!-- PAGE 4: OUR MEMORIES -->
+    <div id="page-memories" class="card">
+      <h2>Our Memories</h2>
+      <p class="small-text">Here is all the memories we've made...</p>
+      <div class="photo-gallery">
+        <img src="https://picsum.photos/200/300?random=1" alt="Memory 1">
+        <img src="https://picsum.photos/200/300?random=2" alt="Memory 2">
+        <img src="https://picsum.photos/200/300?random=3" alt="Memory 3">
+      </div>
+      <button class="btn" onclick="showPage('page-menu')">Back</button>
+    </div>
+
+    <!-- PAGE 5: OUR SONGS -->
+    <div id="page-songs" class="card">
+      <h2>Our Songs</h2>
+      <div class="song-list">
+        <div class="black-box">
+          <strong>1. Nadin Amizah - Rayuan Perempuan Gila</strong>
+          <p>Lagu yang selalu ingetin aku sama kamu...</p>
+        </div>
+        <div class="black-box">
+          <strong>2. Bernadya - Satu Bulan</strong>
+          <p>Lagu favorit kita kalau lagi di jalan.</p>
+        </div>
+      </div>
+      <button class="btn" onclick="showPage('page-menu')">Back</button>
+    </div>
+
+    <!-- PAGE 6: LETTER FOR YOU -->
+    <div id="page-letter" class="card">
+      <h2>Letter for you</h2>
+      <div class="black-box">
+        <p>Hai sayang,<br><br>
+        Tulisan ini aku buat khusus untukmu. Terima kasih sudah sabar dan selalu ada buat aku sampai detik ini. Aku sangat bersyukur bisa mengenalmu dan berjalan bersamamu. I love you endlessly!</p>
+      </div>
+      <button class="btn" onclick="showPage('page-menu')">Back</button>
+    </div>
+
+    <!-- PAGE 7: GIFT -->
+    <div id="page-gift" class="card">
+      <div class="icon-center">🎁</div>
+      <div class="white-box">
+        <p>Hadiah aslinya sudah aku siapin khusus buat kamu. Selamat ulang tahun ya!</p>
+      </div>
+      <button class="btn" onclick="showPage('page-menu')">Back</button>
+    </div>
+
+    <!-- PAGE 8: REASONS I LOVE YOU -->
+    <div id="page-reasons" class="card">
+      <h2>Reasons I Love You</h2>
+      <div class="border-box">
+        <ul>
+          <li>1. Kamu selalu baik dan sabar.</li>
+          <li>2. Senyuman kamu selalu bikin tenang.</li>
+          <li>3. Kamu selalu ada saat aku butuh.</li>
+          <li>4. Kamu adalah pendengar yang baik.</li>
+        </ul>
+      </div>
+      <button class="btn" onclick="showPage('page-menu')">Back</button>
+    </div>
+
+  </div>
+
+  <script>
+    function showPage(pageId) {
+      const cards = document.querySelectorAll('.card');
+      cards.forEach(card => {
+        card.classList.remove('active');
+      });
+
+      const targetPage = document.getElementById(pageId);
+      if (targetPage) {
+        targetPage.classList.add('active');
+      }
+    }
+  </script>
+</body>
+</html>
